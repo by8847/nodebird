@@ -9,7 +9,6 @@ const dotenv = require('dotenv'); // 환경 변수 관리
 // .env 파일에 정의된 환경 변수를 로드
 dotenv.config();
 const pageRouter = require('./routes/page'); // // 페이지 라우터를 불러오기
-const nunjucks = require('nunjucks');
 
 // express 애플리케이션 생성
 const app = express();
