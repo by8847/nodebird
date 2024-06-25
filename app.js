@@ -1,9 +1,9 @@
-const express = reqiure('express'); // express 모듈로 app 객체 생성
+const express = require('express'); // express 모듈로 app 객체 생성
 const cookieParser = require('cookie-parser'); // 쿠키를 파싱하기 위한 미들웨어
-const morgan = require('path'); // HPPT 요청 로깅을 위한 미들웨어
+const morgan = require('morgan'); // HPPT 요청 로깅을 위한 미들웨어
 const path = require('path'); // 파일 및 디렉토리 경로를 다루기 위한 path 모듈
-const session = reqire('express-session'); // 세션 관리를 위한 미들웨어
-const nunjunks = reqire('nunjucks'); // 템플릿 엔진: nunjucks
+const session = require('express-session'); // 세션 관리를 위한 미들웨어
+const nunjucks = require('nunjucks'); // 템플릿 엔진: nunjucks
 const dotenv = require('dotenv'); // 환경 변수 관리
 
 // .env 파일에 정의된 환경 변수를 로드
@@ -34,6 +34,7 @@ app.use(session({
         secure: false, // HTTP가 아닌 환경에서도 쿠키가 전송되도록 설정
     },
 }));
+
 app.use('/', pageRouter); // '/' 경로로 들어오는 요청을 pageRouter로 처리하도록 설정
 
 // 요청한 라우터가 없을 경우 404 에러를 처리하는 미들웨어 추가
